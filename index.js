@@ -158,6 +158,13 @@ gameTile.forEach((tile, i) => {
       }
     } else {
       if (!player.checkDraw()) {
+        for (let i = 0; i < gameTile.length; i++) {
+          if (gameTile[i].textContent === '') {
+            gameTile[i].textContent = 'game over';
+            gameTile[i].style.fontSize = '24px';
+            gameTile[i].style.paddingLeft = '30px';
+          }
+        }
         playerTurn.textContent = `Game ends in draw!!!`;
       }
     }
